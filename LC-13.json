@@ -1,0 +1,73 @@
+{
+  "name": "Термостат",
+  "description": "Living Connect Z Thermostat",
+  "manufacturer": "Danfoss",
+  "model": "LC-13",
+  "manufacturerId": "0002",
+  "modelId": "0005:0004,8005:0001,8005:0002",
+  "services": [
+    {
+      "type": "Thermostat",
+      "characteristics": [
+        {
+          "type": "CurrentTemperature",
+          "link2": {
+            "class": "ThermostatSetpoint",
+            "value": "Heating"
+          }
+        },
+        {
+          "type": "TargetTemperature",
+          "link2": {
+            "class": "ThermostatSetpoint",
+            "value": "Heating"
+          }
+        },
+        {
+          "type": "CurrentHeatingCoolingState",
+          "minValue": 4,
+          "maxValue": 30,
+          "minStep": 0.5,
+          "validValues": "1"
+        },
+        {
+          "type": "TargetHeatingCoolingState",
+          "minValue": 4,
+          "maxValue": 30,
+          "minStep": 0.5,
+          "validValues": "1"
+        }
+      ]
+    },
+    {
+      "name": "Батарейка",
+      "type": "BatteryService",
+      "characteristics": [
+        {
+          "type": "BatteryLevel",
+          "link2": {
+            "class": "Battery",
+            "value": "Level"
+          }
+        },
+        {
+          "type": "StatusLowBattery",
+          "link2": {
+            "class": "Battery",
+            "value": "State"
+          }
+        }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "id": 1,
+      "name": "Target for Wakeup and Override Notifications",
+      "description": "",
+      "overview": "",
+      "controller": true,
+      "nodes": 0
+    }
+  ]
+}
